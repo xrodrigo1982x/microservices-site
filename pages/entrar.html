@@ -1,0 +1,21 @@
+<div class='container row' ng-controller='LoginController'>
+    <form class='col l4 offset-l6'>
+        <div class='input-field'>
+            <input id='username' type='text' ng-model='user.username'>
+            <label for='username'>Login</label>
+        </div>
+        <div class='input-field'>
+            <input id='email' type='email' ng-model='user.email'>
+            <label for='email' data-error='{{errors.email}}'>E-mail</label>
+        </div>
+        <div class='input-field'>
+            <input id='password' type='password' ng-model='user.password'>
+            <label for='password' data-error='{{errors.password}}'>Senha</label>
+        </div>
+        <button class='waves-effect waves-light btn' ng-click='criar(user)'>Criar conta</button>
+        <div ng-show='userExists' class='chip red'>
+            Usuário ou e-mail já cadastrados
+        </div>
+    </form>
+
+</div>

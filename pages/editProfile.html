@@ -1,0 +1,9 @@
+<div class='container row' ng-controller='UserController' ng-init='loadCurrentUser()'>
+    <div class='col l4 offset-l6'>
+        <div class='input-field blue-text'>
+            <input id='name' type='text' ng-model='user.name'>
+            <label for='name' ng-class="user.name != null ? 'active':''">Nome</label>
+        </div>
+        <button class='waves-effect light-blue btn' ng-click='save(user)'>Salvar</button>
+    </div>
+</div>

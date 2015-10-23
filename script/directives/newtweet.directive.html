@@ -1,0 +1,21 @@
+<div class='col l8 offset-l2'>
+
+    <a ng-show='!showTweetBox && canAddTweet()' class='btn-floating btn-large shades blue waves-effect waves-light animate-show' ng-click='showNewTweetBox()'>
+        <i class='material-icons'>add</i>
+    </a>
+
+    <div ng-show='showTweetBox' class='card blue-grey'>
+        <div class='card-content white-text'>
+
+            <div class='input-field'>
+                <textarea class='materialize-textarea' id='tweetText' ng-model='newTweet.content' rows='3'></textarea>
+                <label class='white-text' for='tweetText'>Novo Tweet</label>
+            </div>
+
+        </div>
+        <div class='card-action'>
+            <button class='waves-effect waves-light btn' ng-click='saveTweet(newTweet)'>Enviar</button>
+            <button class='waves-effect waves-light red btn' ng-click='cancelTweet(newTweet)'>Cancelar</button>
+        </div>
+    </div>
+</div>

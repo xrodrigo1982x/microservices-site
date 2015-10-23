@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='mobile-web-app-capable' content='yes'>
+    <title>Tweets</title>
+    <link href='http://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+    <link rel='stylesheet' href='bower_components/materialize/dist/css/materialize.min.css'>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
+</head>
+<body ng-app='app'>
+<nav class='navbar-fixed light-blue lighten-1' ng-controller='LoginController'>
+    <ul id='dropdown1' class='dropdown-content'>
+        <li><a href='#/perfil'>Perfil</a></li>
+        <li><a href='#/seguindo'>Seguindo</a></li>
+        <li class='divider'></li>
+        <li><a ng-click='logout();'>Sair</a></li>
+    </ul>
+    <div class='nav-wrapper container'>
+        <ul class='left hide-on-med-and-down'>
+            <li ng-show='isLoggedIn()' ><timeline-link user='currentUsername()' text='Home'/></li>
+            <li><a href='#/busca'>Busca</a></li>
+            <li ng-show='!isLoggedIn()' ><a href='#/login'>Login</a></li>
+            <li ng-show='!isLoggedIn()' ><a href='#/entrar'>Criar conta</a></li>
+        </ul>
+        <ul ng-show='isLoggedIn()' class='right hide-on-med-and-down'>
+            <li><a class='dropdown-button' href='#!' data-activates='dropdown1'>{{name()}}<i class='material-icons right'>arrow_drop_down</i></a></li>
+        </ul>
+    </div>
+</nav>
+<main ng-view class='container'></main>
+<footer class='page-footer light-blue darken-1'>
+    <div class='footer-copyright'>
+        <div class='container'>
+            Teste
+        </div>
+    </div>
+</footer>
+</body>
+<script src='bower_components/jquery/dist/jquery.min.js'></script>
+<script src='bower_components/angular/angular.min.js'></script>
+<script src='bower_components/angular-route/angular-route.min.js'></script>
+<script src='bower_components/angular-cookies/angular-cookies.min.js'></script>
+<script src='bower_components/materialize/dist/js/materialize.min.js'></script>
+<script src='bower_components/moment/min/moment-with-locales.min.js'></script>
+<script src='bower_components/angular-moment/angular-moment.min.js'></script>
+<script src='bower_components/underscore/underscore.js'></script>
+<script type='text/javascript' src='script/app.js'></script>
+<script type='text/javascript' src='script/app.route.js'></script>
+<script type='text/javascript' src='script/controllers/login.controller.js'></script>
+<script type='text/javascript' src='script/controllers/tweet.controller.js'></script>
+<script type='text/javascript' src='script/controllers/user.controller.js'></script>
+<script type='text/javascript' src='script/controllers/follow.controller.js'></script>
+<script type='text/javascript' src='script/services/tweet.service.js'></script>
+<script type='text/javascript' src='script/services/login.service.js'></script>
+<script type='text/javascript' src='script/services/user.service.js'></script>
+<script type='text/javascript' src='script/services/follow.service.js'></script>
+<script type='text/javascript' src='script/directives/timelinelink.directive.js'></script>
+<script type='text/javascript' src='script/directives/tweet.directive.js'></script>
+<script type='text/javascript' src='script/directives/newtweet.directive.js'></script>
+<script type='text/javascript' src='script/directives/user.directive.js'></script>
+
+</html>

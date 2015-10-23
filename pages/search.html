@@ -1,0 +1,14 @@
+<div class='container' ng-controller='TweetController'>
+    <div class='row'>
+        <form class='col l8 offset-l2' ng-submit='search(q)'>
+            <div class='input-field'>
+                <i class='material-icons prefix'>search</i>
+                <input id='search' ng-model='q' type='text' required>
+                <label for='icon_prefix'>Busca</label>
+            </div>
+        </form>
+        <div class='row' ng-repeat='tweet in tweets track by $index'>
+            <tweet/>
+        </div>
+    </div>
+</div>

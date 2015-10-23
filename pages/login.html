@@ -1,0 +1,14 @@
+<div class='container row' ng-controller='LoginController'>
+    <div class='col l4 offset-l6'>
+        <div class='input-field blue-text'>
+            <input id='username' type='text' ng-model='user.username'>
+            <label for='username' ng-class="user.username != null ? 'active':''">Login</label>
+        </div>
+        <div class='input-field'>
+            <input id='password' type='password' ng-model='user.password'>
+            <label for='password'>Senha</label>
+        </div>
+        <button class='waves-effect light-blue btn' ng-click='login(user)'>Login</button>
+    </div>
+
+</div>

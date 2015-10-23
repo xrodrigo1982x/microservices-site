@@ -1,0 +1,8 @@
+<div class='container' ng-controller='TweetController' ng-init='loadTweets(0)'>
+    <div class='row'>
+       <new-tweet/>
+    </div>
+    <div class='row' ng-repeat='tweet in tweets track by $index'>
+        <tweet/>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class='col s12 m8 l8 offset-l2 offset-m2'>
+    <div class='card blue lighten-5 z-depth-2'>
+        <div class='card-content'>
+            <span class='card-title black-text'><timeline-link user='follow.followed.id' text='{{follow.followed.name | uppercase}}' /></span>
+            <p></p>
+        </div>
+        <div class='card-action'>
+            <a ng-show='follow.alreadyFollowed' class='waves-effect btn white-text small red' ng-click='unfollow(follow)'>Deixar de seguir</a>
+            <a ng-show='!follow.alreadyFollowed' class='waves-effect btn white-text small green' ng-click='dofollow(follow)'>Seguir</a>
+            <span class='badge blue-text text-darken-4'>Desde: {{follow.since | amCalendar}}</span>
+        </div>
+    </div>
+</div>
